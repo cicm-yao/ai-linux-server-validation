@@ -1,21 +1,26 @@
 {
     "project": "Linux Server Validation",
+    "run_time": "2026-09-27 00:18:27",
     "results": [
         {
             "test": "tests/cpu/test_cpu.py",
-            "result": "PASS"
+            "result": "PASS",
+            "duration": 0.17
         },
         {
             "test": "tests/cpu/test_cpu_stress.py",
-            "result": "PASS"
+            "result": "PASS",
+            "duration": 10.28
         },
         {
             "test": "tests/memory/test_memory_stress.py",
-            "result": "PASS"
+            "result": "PASS",
+            "duration": 10.19
         },
         {
             "test": "tests/storage/test_storage_fio.py",
-            "result": "PASS"
+            "result": "PASS",
+            "duration": 10.68
         }
     ]
 }

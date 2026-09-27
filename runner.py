@@ -1,10 +1,14 @@
 import subprocess
 import json
+import time
+from datetime import datetime
 
 
 def run_test(test_path):
 
     print("\nRunning:", test_path)
+
+    start_time = time.time()
 
     result = subprocess.run(
         [
@@ -12,6 +16,8 @@ def run_test(test_path):
             test_path
         ]
     )
+
+    duration = time.time() - start_time
 
     if result.returncode == 0:
         status = "PASS"
@@ -22,7 +28,8 @@ def run_test(test_path):
 
     return {
         "test": test_path,
-        "result": status
+        "result": status,
+        "duration": round(duration, 2)
     }
 
 
@@ -43,6 +50,7 @@ def main():
 
     report = {
         "project": "Linux Server Validation",
+        "run_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "results": results
     }
 
@@ -51,6 +59,7 @@ def main():
         "reports/validation_report.json",
         "w"
     ) as file:
+
         json.dump(
             report,
             file,
