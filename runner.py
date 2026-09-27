@@ -25,6 +25,21 @@ def get_evidence(test_path):
 
     return evidence_map.get(test_path, "N/A")
 
+def run_rca():
+
+    print("\nRunning RCA Analyzer...")
+
+    result = subprocess.run(
+        [
+            "python3",
+            "scripts/rca_analyzer.py"
+        ]
+    )
+
+    if result.returncode == 0:
+        print("RCA completed")
+    else:
+        print("RCA failed")
 
 def run_test(test_path):
 
@@ -68,8 +83,16 @@ def main():
 
     results = []
 
+    failed = False
+
     for test in tests:
-        results.append(run_test(test))
+    
+         result = run_test(test)
+
+         results.append(result)
+
+         if result["result"] == "FAIL":
+            failed = True
 
 
     report = {
@@ -90,6 +113,9 @@ def main():
             indent=4
         )
 
+    if failed:
+
+        run_rca()
 
     print("\nReport generated:")
     print("reports/validation_report.json")
