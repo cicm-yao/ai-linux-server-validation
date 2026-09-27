@@ -1,37 +1,96 @@
-import yaml
 import json
+from knowledge_loader import load_knowledge
 
 
 def analyze_failure():
 
+    # Evidence log
     log_file = "evidence/fault/cpu_fault.log"
 
+
+    # Read log
     with open(log_file, "r") as file:
         log = file.read()
 
 
-    with open("rca/rules.yaml", "r") as file:
-        rules = yaml.safe_load(file)
+    # Load knowledge base
+    knowledge = load_knowledge()
 
 
-    result = {
+    result =  {
+         "failure_id": "Unknown",
         "evidence": log_file,
         "component": "Unknown",
         "root_cause": "Unknown",
-        "suggestion": "Unknown"
+        "suggestion": "Unknown",
+        "confidence": 0,
+        "matched_keywords": []
     }
 
 
-    for rule in rules["rules"]:
+    best_match = None
+    best_score = 0
+    best_keywords = []
 
-        if rule["keyword"] in log:
 
-            result["component"] = rule["component"]
-            result["root_cause"] = rule["root_cause"]
-            result["suggestion"] = rule["suggestion"]
+    # Weighted matching
+    for failure in knowledge:
 
-            break
+        score = 0
+        matched = []
 
+
+        for keyword in failure.get("keywords", []):
+
+            text = keyword["text"]
+            weight = keyword["weight"]
+
+
+            if text in log:
+
+                score += weight
+                matched.append(text)
+
+
+        # Keep highest score
+        if score > best_score:
+
+            best_score = score
+            best_match = failure
+            best_keywords = matched
+
+
+
+    # Generate RCA result
+
+    if best_match:
+        result["failure_id"] = best_match.get(
+             "id",
+             "Unknown"
+        )
+
+        result["component"] = best_match.get(
+            "component",
+            "Unknown"
+        )
+
+        result["root_cause"] = best_match.get(
+            "root_cause",
+            "Unknown"
+        )
+
+        result["suggestion"] = best_match.get(
+            "recommended_action",
+            "Unknown"
+        )
+
+        result["confidence"] = best_score
+
+        result["matched_keywords"] = best_keywords
+
+
+
+    # Write RCA report
 
     with open(
         "reports/rca_report.json",
@@ -45,9 +104,11 @@ def analyze_failure():
         )
 
 
-    print("RCA report generated")
+    print("RCA report generated:")
     print("reports/rca_report.json")
 
 
+
 if __name__ == "__main__":
+
     analyze_failure()
