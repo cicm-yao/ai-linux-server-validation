@@ -1,34 +1,29 @@
-import subprocess
-import time
+import sys
+import os
+
+sys.path.append(
+    os.path.abspath(".")
+)
+
+from fault_injection.cpu.cpu_stress import inject_cpu_fault
 
 
 def test_cpu_fault_injection():
 
     log_file = "evidence/fault/cpu_fault.log"
 
-    process = subprocess.Popen(
-        [
-            "stress-ng",
-            "--cpu",
-            "2",
-            "--timeout",
-            "20s"
-        ],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True
-    )
+    result = inject_cpu_fault()
 
-    time.sleep(5)
-
-    if process.poll() is None:
-        status = "Fault injection running"
-
-    stdout, stderr = process.communicate()
 
     with open(log_file, "w") as file:
-        file.write(status + "\n")
-        file.write(stdout)
-        file.write(stderr)
 
-    assert process.returncode == 0
+        file.write(
+            result["stdout"]
+        )
+
+        file.write(
+            result["stderr"]
+        )
+
+
+    assert result["return_code"] == 0
