@@ -30,7 +30,8 @@ def collect_storage():
 
 def collect_network():
     return run_command("ip -br link")
-
+def collect_pci():
+    return run_command("lspci -nn")
 
 def main():
 
@@ -41,7 +42,8 @@ def main():
         "cpu": collect_cpu(),
         "memory": collect_memory(),
         "storage": collect_storage(),
-        "network": collect_network()
+        "network": collect_network(),
+    "pci": collect_pci()
     }
 
     output_file = "inventory/reports/inventory_report.json"
