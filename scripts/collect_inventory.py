@@ -1,41 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import subprocess
 import json
 
@@ -62,6 +24,14 @@ def collect_memory():
     return run_command("free -h | grep Mem")
 
 
+def collect_storage():
+    return run_command("lsblk")
+
+
+def collect_network():
+    return run_command("ip -br link")
+
+
 def main():
 
     print("Collecting system inventory...\n")
@@ -69,7 +39,9 @@ def main():
     inventory = {
         "kernel": collect_kernel(),
         "cpu": collect_cpu(),
-        "memory": collect_memory()
+        "memory": collect_memory(),
+        "storage": collect_storage(),
+        "network": collect_network()
     }
 
     output_file = "inventory/reports/inventory_report.json"
@@ -87,7 +59,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
