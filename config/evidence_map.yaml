@@ -1,0 +1,20 @@
+evidence_map:
+
+  tests/fault/test_cpu_fault_injection.py:
+    evidence: evidence/fault/cpu_fault.log
+
+
+  tests/network/test_network_check.py:
+    evidence: evidence/network/network_check.log
+
+
+  tests/storage/test_storage_fio.py:
+    evidence: evidence/storage/storage_fio.log
+
+
+  tests/memory/test_memory_stress.py:
+    evidence: evidence/memory/memory_stress.log
+
+
+  tests/cpu/test_cpu_stress.py:
+    evidence: evidence/cpu/cpu_stress.log

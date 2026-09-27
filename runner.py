@@ -1,4 +1,5 @@
 import subprocess
+import yaml
 import json
 import time
 from datetime import datetime
@@ -25,14 +26,27 @@ def get_evidence(test_path):
 
     return evidence_map.get(test_path, "N/A")
 
-def run_rca():
+def load_evidence_map():
+
+    with open(
+        "config/evidence_map.yaml",
+        "r"
+    ) as file:
+
+        data = yaml.safe_load(file)
+
+    return data["evidence_map"]
+
+
+def run_rca(evidence_file):
 
     print("\nRunning RCA Analyzer...")
 
     result = subprocess.run(
         [
             "python3",
-            "scripts/rca_analyzer.py"
+            "scripts/rca_analyzer.py",
+            evidence_file
         ]
     )
 
@@ -91,7 +105,7 @@ def main():
 
     results = []
 
-    failed = False
+    failed_test = None
 
     for test in tests:
     
@@ -100,7 +114,7 @@ def main():
          results.append(result)
 
          if result["result"] == "FAIL":
-            failed = True
+             failed_test = result
 
 
     report = {
@@ -120,11 +134,15 @@ def main():
             file,
             indent=4
         )
+    
+    if failed_test:
 
-    if failed:
+        evidence_file = failed_test["evidence"]
 
-        run_rca()
+        run_rca(evidence_file)
+
         save_history()
+
 
     print("\nReport generated:")
     print("reports/validation_report.json")

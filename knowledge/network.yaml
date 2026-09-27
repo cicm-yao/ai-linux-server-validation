@@ -7,11 +7,14 @@ failures:
 
     keywords:
 
-      - text: "link down"
-        weight: 10
+      - text: "UNKNOWN"
+        weight: 8
 
-      - text: "interface"
+      - text: "LOWER_UP"
         weight: 5
+
+      - text: "ens33"
+        weight: 3
 
 
     root_cause:
