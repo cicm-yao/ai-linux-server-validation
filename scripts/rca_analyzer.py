@@ -1,11 +1,17 @@
 import json
+import sys
 from knowledge_loader import load_knowledge
 
 
 def analyze_failure():
 
     # Evidence log
-    log_file = "evidence/fault/cpu_fault.log"
+    if len(sys.argv) < 2:
+        print("Usage: python3 rca_analyzer.py <evidence_log>")
+        sys.exit(1)
+
+
+    log_file = sys.argv[1]
 
 
     # Read log

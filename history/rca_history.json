@@ -24,5 +24,29 @@
         ],
         "suggestion": "Reduce CPU workload or check scheduling",
         "evidence": "evidence/fault/cpu_fault.log"
+    },
+    {
+        "timestamp": "2026-09-27 08:45:10",
+        "failure_id": "Unknown",
+        "component": "Unknown",
+        "root_cause": "Unknown",
+        "confidence": 0,
+        "matched_keywords": [],
+        "suggestion": "Unknown",
+        "evidence": "evidence/network/network_check.log"
+    },
+    {
+        "timestamp": "2026-09-27 08:48:56",
+        "failure_id": "NETWORK_001",
+        "component": "Network",
+        "root_cause": "NIC or network configuration issue",
+        "confidence": 16,
+        "matched_keywords": [
+            "UNKNOWN",
+            "LOWER_UP",
+            "ens33"
+        ],
+        "suggestion": "Check NIC driver and configuration",
+        "evidence": "evidence/network/network_check.log"
     }
 ]
