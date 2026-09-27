@@ -1,3 +1,41 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import subprocess
 import json
 
@@ -12,18 +50,26 @@ def run_command(command):
     return result.stdout.strip()
 
 
+def collect_kernel():
+    return run_command("uname -a")
+
+
+def collect_cpu():
+    return run_command("lscpu | grep 'Model name'")
+
+
+def collect_memory():
+    return run_command("free -h | grep Mem")
+
+
 def main():
 
     print("Collecting system inventory...\n")
 
-    kernel = run_command("uname -a")
-    cpu = run_command("lscpu | grep 'Model name'")
-    memory = run_command("free -h | grep Mem")
-
     inventory = {
-        "kernel": kernel,
-        "cpu": cpu,
-        "memory": memory
+        "kernel": collect_kernel(),
+        "cpu": collect_cpu(),
+        "memory": collect_memory()
     }
 
     output_file = "inventory/reports/inventory_report.json"
@@ -41,3 +87,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
