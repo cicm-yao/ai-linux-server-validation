@@ -1,4 +1,5 @@
 import subprocess
+import json
 
 
 def run_test(test_path):
@@ -13,9 +14,16 @@ def run_test(test_path):
     )
 
     if result.returncode == 0:
-        print("PASS:", test_path)
+        status = "PASS"
     else:
-        print("FAIL:", test_path)
+        status = "FAIL"
+
+    print(status + ":", test_path)
+
+    return {
+        "test": test_path,
+        "result": status
+    }
 
 
 def main():
@@ -27,8 +35,31 @@ def main():
         "tests/storage/test_storage_fio.py"
     ]
 
+    results = []
+
     for test in tests:
-        run_test(test)
+        results.append(run_test(test))
+
+
+    report = {
+        "project": "Linux Server Validation",
+        "results": results
+    }
+
+
+    with open(
+        "reports/validation_report.json",
+        "w"
+    ) as file:
+        json.dump(
+            report,
+            file,
+            indent=4
+        )
+
+
+    print("\nReport generated:")
+    print("reports/validation_report.json")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,21 @@
+{
+    "project": "Linux Server Validation",
+    "results": [
+        {
+            "test": "tests/cpu/test_cpu.py",
+            "result": "PASS"
+        },
+        {
+            "test": "tests/cpu/test_cpu_stress.py",
+            "result": "PASS"
+        },
+        {
+            "test": "tests/memory/test_memory_stress.py",
+            "result": "PASS"
+        },
+        {
+            "test": "tests/storage/test_storage_fio.py",
+            "result": "PASS"
+        }
+    ]
+}
