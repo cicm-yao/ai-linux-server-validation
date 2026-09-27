@@ -1,0 +1,21 @@
+test_case_id: TC_CPU_001
+
+requirement:
+  CPU information shall be available
+
+purpose:
+  Verify CPU discovery result from DUT inventory
+
+precondition:
+  Linux system is booted
+
+test_steps:
+  - Run inventory collector
+  - Read inventory_report.json
+  - Check CPU information
+
+expected_result:
+  CPU information exists
+
+evidence:
+  inventory/reports/inventory_report.json
