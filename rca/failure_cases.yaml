@@ -1,0 +1,18 @@
+failure_id: FI_CPU_001
+
+component: CPU
+
+symptom:
+  High CPU load injected
+
+evidence:
+  evidence/fault/cpu_fault.log
+
+observed_result:
+  System remained operational
+
+root_cause:
+  CPU resource exhaustion simulation
+
+recovery:
+  Workload terminated successfully

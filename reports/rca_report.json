@@ -1,0 +1,8 @@
+{
+    "failure_id": "FI_CPU_001",
+    "component": "CPU",
+    "symptom": "High CPU load injected",
+    "evidence": "evidence/fault/cpu_fault.log",
+    "root_cause": "CPU resource exhaustion simulation",
+    "recovery": "Workload terminated successfully"
+}
