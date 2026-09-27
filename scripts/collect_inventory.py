@@ -1,4 +1,5 @@
 import subprocess
+import json
 
 
 def run_command(command):
@@ -15,16 +16,27 @@ def main():
 
     print("Collecting system inventory...\n")
 
-    print("=== Kernel ===")
-    print(run_command("uname -a"))
+    kernel = run_command("uname -a")
+    cpu = run_command("lscpu | grep 'Model name'")
+    memory = run_command("free -h | grep Mem")
 
-    print("\n=== CPU ===")
-    print(run_command("lscpu | grep 'Model name'"))
+    inventory = {
+        "kernel": kernel,
+        "cpu": cpu,
+        "memory": memory
+    }
 
-    print("\n=== Memory ===")
-    print(run_command("free -h | grep Mem"))
+    output_file = "inventory/reports/inventory_report.json"
 
-    print("\nInventory collection finished.")
+    with open(output_file, "w") as file:
+        json.dump(
+            inventory,
+            file,
+            indent=4
+        )
+
+    print("Inventory report generated:")
+    print(output_file)
 
 
 if __name__ == "__main__":

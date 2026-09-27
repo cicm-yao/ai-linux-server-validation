@@ -1,0 +1,5 @@
+{
+    "kernel": "Linux ubuntu 5.15.0-139-generic #149~20.04.1-Ubuntu SMP Wed Apr 16 08:29:56 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux",
+    "cpu": "Model name:                           Intel(R) Core(TM) Ultra 5 125H",
+    "memory": "Mem:          7.7Gi       1.1Gi       4.5Gi       2.0Mi       2.1Gi       6.3Gi"
+}
