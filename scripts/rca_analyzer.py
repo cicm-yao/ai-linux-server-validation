@@ -4,22 +4,33 @@ import json
 
 def analyze_failure():
 
-    with open(
-        "rca/failure_cases.yaml",
-        "r"
-    ) as file:
+    log_file = "evidence/fault/cpu_fault.log"
 
-        failure = yaml.safe_load(file)
+    with open(log_file, "r") as file:
+        log = file.read()
 
 
-    report = {
-        "failure_id": failure["failure_id"],
-        "component": failure["component"],
-        "symptom": failure["symptom"],
-        "evidence": failure["evidence"],
-        "root_cause": failure["root_cause"],
-        "recovery": failure["recovery"]
+    with open("rca/rules.yaml", "r") as file:
+        rules = yaml.safe_load(file)
+
+
+    result = {
+        "evidence": log_file,
+        "component": "Unknown",
+        "root_cause": "Unknown",
+        "suggestion": "Unknown"
     }
+
+
+    for rule in rules["rules"]:
+
+        if rule["keyword"] in log:
+
+            result["component"] = rule["component"]
+            result["root_cause"] = rule["root_cause"]
+            result["suggestion"] = rule["suggestion"]
+
+            break
 
 
     with open(
@@ -28,13 +39,13 @@ def analyze_failure():
     ) as file:
 
         json.dump(
-            report,
+            result,
             file,
             indent=4
         )
 
 
-    print("RCA report generated:")
+    print("RCA report generated")
     print("reports/rca_report.json")
 
 

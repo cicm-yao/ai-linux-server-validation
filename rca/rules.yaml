@@ -1,0 +1,26 @@
+rules:
+
+  - keyword:
+      "dispatching hogs"
+
+    component:
+      CPU
+
+    root_cause:
+      CPU resource exhaustion
+
+    suggestion:
+      Reduce CPU workload
+
+
+  - keyword:
+      "successful run completed"
+
+    component:
+      General
+
+    root_cause:
+      Stress workload completed successfully
+
+    suggestion:
+      System recovered normally
