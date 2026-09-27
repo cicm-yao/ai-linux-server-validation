@@ -1,0 +1,26 @@
+failures:
+
+  - id: STORAGE_001
+
+    component:
+      Storage
+
+    keywords:
+
+      - text: "fio"
+        weight: 5
+
+      - text: "error"
+        weight: 10
+
+
+    root_cause:
+      Storage device or I/O path issue
+
+
+    impact:
+      Application I/O degradation
+
+
+    recommended_action:
+      Check disk health and storage driver

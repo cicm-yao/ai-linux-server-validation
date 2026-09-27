@@ -1,0 +1,26 @@
+failures:
+
+  - id: NETWORK_001
+
+    component:
+      Network
+
+    keywords:
+
+      - text: "link down"
+        weight: 10
+
+      - text: "interface"
+        weight: 5
+
+
+    root_cause:
+      NIC or network configuration issue
+
+
+    impact:
+      Network communication failure
+
+
+    recommended_action:
+      Check NIC driver and configuration

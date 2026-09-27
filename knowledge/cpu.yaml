@@ -1,0 +1,44 @@
+failures:
+
+  - id: CPU_001
+
+    component:
+      CPU
+
+    keywords:
+
+      - text: "dispatching hogs"
+        weight: 10
+
+      - text: "cpu"
+        weight: 3
+
+
+    root_cause:
+      CPU resource exhaustion
+
+
+    recommended_action:
+      Reduce CPU workload or check scheduling
+
+
+  - id: CPU_002
+
+    component:
+      CPU
+
+    keywords:
+
+      - text: "failed"
+        weight: 10
+
+      - text: "stress-ng"
+        weight: 1
+
+
+    root_cause:
+      CPU stability issue
+
+
+    recommended_action:
+      Check CPU hardware and thermal condition

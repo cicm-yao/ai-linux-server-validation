@@ -1,0 +1,26 @@
+failures:
+
+  - id: MEMORY_001
+
+    component:
+      Memory
+
+    keywords:
+
+      - text: "vm"
+        weight: 5
+
+      - text: "memory"
+        weight: 3
+
+
+    root_cause:
+      Memory resource exhaustion
+
+
+    impact:
+      Application instability
+
+
+    recommended_action:
+      Check memory usage and hardware health
