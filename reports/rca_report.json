@@ -1,6 +1,0 @@
-{
-    "evidence": "evidence/fault/cpu_fault.log",
-    "component": "CPU",
-    "root_cause": "CPU resource exhaustion",
-    "suggestion": "Reduce CPU workload"
-}

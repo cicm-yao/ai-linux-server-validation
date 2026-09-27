@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 *.swp
+
+reports/**/*.json
+
+evidence/**/*.log
