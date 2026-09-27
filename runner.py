@@ -3,6 +3,7 @@ import json
 import time
 from datetime import datetime
 
+
 def get_evidence(test_path):
 
     evidence_map = {
@@ -16,13 +17,13 @@ def get_evidence(test_path):
             "evidence/memory/memory_stress.log",
 
         "tests/storage/test_storage_fio.py":
-            "evidence/storage/storage_fio.log"
+            "evidence/storage/storage_fio.log",
+
+        "tests/network/test_network_check.py":
+            "evidence/network/network_check.log"
     }
 
-    return evidence_map.get(
-        test_path,
-        "N/A"
-    )
+    return evidence_map.get(test_path, "N/A")
 
 
 def run_test(test_path):
@@ -61,7 +62,8 @@ def main():
         "tests/cpu/test_cpu.py",
         "tests/cpu/test_cpu_stress.py",
         "tests/memory/test_memory_stress.py",
-        "tests/storage/test_storage_fio.py"
+        "tests/storage/test_storage_fio.py",
+        "tests/network/test_network_check.py"
     ]
 
     results = []

@@ -1,17 +1,17 @@
 {
     "project": "Linux Server Validation",
-    "run_time": "2026-09-27 00:23:04",
+    "run_time": "2026-09-27 00:43:15",
     "results": [
         {
             "test": "tests/cpu/test_cpu.py",
             "result": "PASS",
-            "duration": 0.16,
+            "duration": 0.17,
             "evidence": "inventory/reports/inventory_report.json"
         },
         {
             "test": "tests/cpu/test_cpu_stress.py",
             "result": "PASS",
-            "duration": 10.37,
+            "duration": 10.22,
             "evidence": "evidence/cpu/cpu_stress.log"
         },
         {
@@ -25,6 +25,12 @@
             "result": "PASS",
             "duration": 10.74,
             "evidence": "evidence/storage/storage_fio.log"
+        },
+        {
+            "test": "tests/network/test_network_check.py",
+            "result": "PASS",
+            "duration": 0.17,
+            "evidence": "evidence/network/network_check.log"
         }
     ]
 }
