@@ -1,0 +1,28 @@
+[
+    {
+        "timestamp": "2026-09-27 08:04:52",
+        "failure_id": "CPU_001",
+        "component": "CPU",
+        "root_cause": "CPU resource exhaustion",
+        "confidence": 13,
+        "matched_keywords": [
+            "dispatching hogs",
+            "cpu"
+        ],
+        "suggestion": "Reduce CPU workload or check scheduling",
+        "evidence": "evidence/fault/cpu_fault.log"
+    },
+    {
+        "timestamp": "2026-09-27 08:12:54",
+        "failure_id": "CPU_001",
+        "component": "CPU",
+        "root_cause": "CPU resource exhaustion",
+        "confidence": 13,
+        "matched_keywords": [
+            "dispatching hogs",
+            "cpu"
+        ],
+        "suggestion": "Reduce CPU workload or check scheduling",
+        "evidence": "evidence/fault/cpu_fault.log"
+    }
+]

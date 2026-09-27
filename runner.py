@@ -70,6 +70,14 @@ def run_test(test_path):
         "evidence": get_evidence(test_path)
     }
 
+def save_history():
+
+    subprocess.run(
+        [
+            "python3",
+            "scripts/history_store.py"
+        ]
+    )
 
 def main():
 
@@ -116,6 +124,7 @@ def main():
     if failed:
 
         run_rca()
+        save_history()
 
     print("\nReport generated:")
     print("reports/validation_report.json")
