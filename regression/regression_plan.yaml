@@ -1,0 +1,16 @@
+regression_suite:
+
+  - id: TC_CPU_001
+    test: tests/cpu/test_cpu.py
+
+  - id: TC_CPU_STRESS_001
+    test: tests/cpu/test_cpu_stress.py
+
+  - id: TC_MEMORY_STRESS_001
+    test: tests/memory/test_memory_stress.py
+
+  - id: TC_STORAGE_FIO_001
+    test: tests/storage/test_storage_fio.py
+
+  - id: TC_NETWORK_001
+    test: tests/network/test_network_check.py
