@@ -1,21 +1,31 @@
-test_case_id: TC_CPU_001
+test_cases:
 
-requirement:
-  CPU information shall be available
+  - id: TC_CPU_001
+    script: tests/cpu/test_cpu.py
+    evidence:
+      - inventory/reports/inventory_report.json
 
-purpose:
-  Verify CPU discovery result from DUT inventory
+  - id: TC_CPU_STRESS_001
+    script: tests/cpu/test_cpu_stress.py
+    evidence:
+      - evidence/cpu/cpu_stress.log
 
-precondition:
-  Linux system is booted
+  - id: TC_MEMORY_STRESS_001
+    script: tests/memory/test_memory_stress.py
+    evidence:
+      - evidence/memory/memory_stress.log
 
-test_steps:
-  - Run inventory collector
-  - Read inventory_report.json
-  - Check CPU information
+  - id: TC_STORAGE_FIO_001
+    script: tests/storage/test_storage_fio.py
+    evidence:
+      - evidence/storage/storage_fio.log
 
-expected_result:
-  CPU information exists
+  - id: TC_NETWORK_001
+    script: tests/network/test_network_check.py
+    evidence:
+      - evidence/network/network_check.log
 
-evidence:
-  inventory/reports/inventory_report.json
+  - id: TC_FAULT_CPU_001
+    script: tests/fault/test_cpu_fault_injection.py
+    evidence:
+      - evidence/fault/cpu_fault.log
