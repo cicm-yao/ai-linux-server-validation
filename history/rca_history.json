@@ -48,5 +48,18 @@
         ],
         "suggestion": "Check NIC driver and configuration",
         "evidence": "evidence/network/network_check.log"
+    },
+    {
+        "timestamp": "2026-09-28 08:01:20",
+        "failure_id": "CPU_001",
+        "component": "CPU",
+        "root_cause": "CPU resource exhaustion",
+        "confidence": 13,
+        "matched_keywords": [
+            "dispatching hogs",
+            "cpu"
+        ],
+        "suggestion": "Reduce CPU workload or check scheduling",
+        "evidence": "evidence/fault/cpu_fault.log"
     }
 ]

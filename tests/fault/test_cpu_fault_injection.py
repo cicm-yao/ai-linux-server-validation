@@ -5,8 +5,7 @@ sys.path.append(
     os.path.abspath(".")
 )
 
-from fault_injection.cpu.cpu_stress import inject_cpu_fault
-
+from experiments.fault_injection.cpu.cpu_stress import inject_cpu_fault
 
 def test_cpu_fault_injection():
 
