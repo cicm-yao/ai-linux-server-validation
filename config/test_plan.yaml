@@ -29,3 +29,8 @@ test_cases:
     script: tests/fault/test_cpu_fault_injection.py
     evidence:
       - evidence/fault/cpu_fault.log
+
+  - id: TC_FAULT_NETWORK_001
+    script: tests/fault/test_network_fault_injection.py
+    evidence:
+      - evidence/fault/network_fault.log

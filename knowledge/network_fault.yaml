@@ -1,0 +1,43 @@
+failures:
+
+  - id: NET_LINK_DOWN_001
+
+    priority: high
+
+    component: Network
+
+    root_cause:
+      Network interface unavailable
+
+
+    recommended_action:
+      Check interface state and NIC link status
+
+
+    keywords:
+      - text: "simulate network unavailable"
+        weight: 15
+
+      - text: network
+        weight: 3
+
+      - text: unavailable
+        weight: 3
+
+      - text: failed
+        weight: 2
+
+      - text: down
+        weight: 2
+
+
+    symptoms:
+
+      - network unavailable
+      - ping failed
+      - interface down
+
+
+    evidence:
+
+      - network_fault.log
