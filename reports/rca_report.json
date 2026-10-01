@@ -1,0 +1,13 @@
+{
+    "failure_id": "NET_LINK_DOWN_001",
+    "evidence": "evidence/fault/network_fault.log",
+    "component": "Network",
+    "root_cause": "Network interface unavailable",
+    "suggestion": "Check interface state and NIC link status",
+    "confidence": 21,
+    "matched_keywords": [
+        "simulate network unavailable",
+        "network",
+        "unavailable"
+    ]
+}

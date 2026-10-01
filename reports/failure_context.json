@@ -1,0 +1,7 @@
+{
+    "failure_id": "NET_LINK_DOWN_001",
+    "failed_test": "TC_FAULT_NETWORK_001",
+    "recovery_action": "network configuration restored",
+    "regression_test": "TC_NETWORK_001",
+    "regression_result": "PASS"
+}

@@ -1,0 +1,11 @@
+{
+    "source_log": "evidence/fault/network_fault.log",
+    "keywords": [
+        "network",
+        "unavailable"
+    ],
+    "facts": [
+        "Network unavailable condition detected",
+        "Network interface state collected"
+    ]
+}

@@ -1,0 +1,76 @@
+{
+    "project": "AI-Augmented Linux Server System Validation",
+    "run_time": "2026-10-01 01:58:27",
+    "results": [
+        {
+            "test_case_id": "TC_CPU_001",
+            "script": "tests/cpu/test_cpu.py",
+            "status": "PASS",
+            "duration": 0.13,
+            "output": ".                                                                        [100%]\n1 passed in 0.01s\n",
+            "evidence": [
+                "inventory/reports/inventory_report.json"
+            ]
+        },
+        {
+            "test_case_id": "TC_CPU_STRESS_001",
+            "script": "tests/cpu/test_cpu_stress.py",
+            "status": "PASS",
+            "duration": 10.14,
+            "output": ".                                                                        [100%]\n1 passed in 10.02s\n",
+            "evidence": [
+                "evidence/cpu/cpu_stress.log"
+            ]
+        },
+        {
+            "test_case_id": "TC_MEMORY_STRESS_001",
+            "script": "tests/memory/test_memory_stress.py",
+            "status": "PASS",
+            "duration": 10.17,
+            "output": ".                                                                        [100%]\n1 passed in 10.04s\n",
+            "evidence": [
+                "evidence/memory/memory_stress.log"
+            ]
+        },
+        {
+            "test_case_id": "TC_STORAGE_FIO_001",
+            "script": "tests/storage/test_storage_fio.py",
+            "status": "PASS",
+            "duration": 10.72,
+            "output": ".                                                                        [100%]\n1 passed in 10.60s\n",
+            "evidence": [
+                "evidence/storage/storage_fio.log"
+            ]
+        },
+        {
+            "test_case_id": "TC_NETWORK_001",
+            "script": "tests/network/test_network_check.py",
+            "status": "PASS",
+            "duration": 0.13,
+            "output": ".                                                                        [100%]\n1 passed in 0.01s\n",
+            "evidence": [
+                "evidence/network/network_check.log"
+            ]
+        },
+        {
+            "test_case_id": "TC_FAULT_CPU_001",
+            "script": "tests/fault/test_cpu_fault_injection.py",
+            "status": "PASS",
+            "duration": 20.33,
+            "output": ".                                                                        [100%]\n1 passed in 20.21s\n",
+            "evidence": [
+                "evidence/fault/cpu_fault.log"
+            ]
+        },
+        {
+            "test_case_id": "TC_FAULT_NETWORK_001",
+            "script": "tests/fault/test_network_fault_injection.py",
+            "status": "FAIL",
+            "duration": 0.12,
+            "output": "\nno tests ran in 0.00s\n",
+            "evidence": [
+                "evidence/fault/network_fault.log"
+            ]
+        }
+    ]
+}
