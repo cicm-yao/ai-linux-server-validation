@@ -54,7 +54,6 @@ Thumbs.db
 # =========================
 
 evidence/**/*.log
-runs/
 tmp/
 
 
@@ -88,5 +87,11 @@ dist/
 .env
 *.key
 *.pem
-runs/*/
-!runs/example_run/
+
+# ignore generated history
+runs/*
+reports/*
+
+# keep selected examples
+!runs/latest/
+!reports/examples/
