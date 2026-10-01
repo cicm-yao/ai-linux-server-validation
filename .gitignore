@@ -61,7 +61,7 @@ tmp/
 # Generated Reports
 # =========================
 
-reports/*.json
+#reports/*.json
 
 
 # =========================
@@ -89,9 +89,9 @@ dist/
 *.pem
 
 # ignore generated history
-runs/*
-reports/*
+#runs/*
+#reports/*
 
 # keep selected examples
-!runs/latest/
-!reports/examples/
+#!runs/latest/
+#!reports/examples/
