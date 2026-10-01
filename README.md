@@ -268,7 +268,7 @@ server-validation/
 ├── history/
 |
 ├── runs/
-│   └── YYYYMMDD_HHMMSS/
+│   └── 20261001_015827/
 │
 ├── scripts/
 │   ├── collect_inventory.py
