@@ -45,7 +45,7 @@ AI is used as an assistant for failure analysis rather than replacing determinis
 
 ## Validation Framework
 
-Implemented a configuration-driven validation framework based on Python and pytest.
+Implemented a configuration-driven validation framework based on Python，pytest and pytest.ini configuration.
 
 Features:
 
@@ -258,10 +258,11 @@ server-validation/
 │   ├── validation_report.json
 │   ├── rca_report.json
 │   ├── regression_report.json
-│   ├── ai_rca_report.json
 │   ├── failure_context.json
 │   └── structured_evidence.json
 │
+├── history/
+|
 ├── runs/
 │   └── YYYYMMDD_HHMMSS/
 │
