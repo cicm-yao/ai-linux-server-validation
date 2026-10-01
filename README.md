@@ -45,15 +45,19 @@ AI is used as an assistant for failure analysis rather than replacing determinis
 
 ## Validation Framework
 
-Implemented a configuration-driven validation framework based on Python，pytest and pytest.ini configuration.
+Implemented a configuration-driven validation framework based on Python and pytest.
 
-Features:
+The framework supports:
 
-- YAML-based test plan
-- Automated test execution
+- YAML-based test plan execution
+- Automated test case execution
 - Test case management
+- Evidence collection and tracking
 - JSON validation report generation
-- Evidence path tracking
+
+pytest configuration:
+
+- pytest.ini is used for Python import path configuration.
 
 Workflow:
 
