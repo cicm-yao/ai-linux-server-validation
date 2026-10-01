@@ -115,6 +115,13 @@ def save_report(results):
 
 
 def run_rca(results):
+    subprocess.run(
+    [
+     "python3",
+     "analyzer/ai/rca_assistant.py",
+     "reports/structured_evidence.json"
+    ]
+    )
 
     for item in results:
 
@@ -166,6 +173,13 @@ def main():
     for test in tests:
 
         result = run_test(test)
+        subprocess.run(
+        [
+            "python3",
+            "scripts/evidence_collector.py",
+            test["id"]
+        ]
+    )
 
         results.append(result)
 

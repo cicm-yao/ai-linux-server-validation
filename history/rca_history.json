@@ -61,5 +61,89 @@
         ],
         "suggestion": "Reduce CPU workload or check scheduling",
         "evidence": "evidence/fault/cpu_fault.log"
+    },
+    {
+        "timestamp": "2026-09-28 10:24:15",
+        "failure_id": "NET_LINK_DOWN_001",
+        "component": "Network",
+        "root_cause": "Network interface unavailable",
+        "confidence": 21,
+        "matched_keywords": [
+            "simulate network unavailable",
+            "network",
+            "unavailable"
+        ],
+        "suggestion": "Check interface state and NIC link status",
+        "evidence": "evidence/fault/network_fault.log"
+    },
+    {
+        "timestamp": "2026-09-29 02:59:14",
+        "failure_id": "NET_LINK_DOWN_001",
+        "component": "Network",
+        "root_cause": "Network interface unavailable",
+        "confidence": 21,
+        "matched_keywords": [
+            "simulate network unavailable",
+            "network",
+            "unavailable"
+        ],
+        "suggestion": "Check interface state and NIC link status",
+        "evidence": "evidence/fault/network_fault.log"
+    },
+    {
+        "timestamp": "2026-09-30 23:58:03",
+        "failure_id": "NET_LINK_DOWN_001",
+        "component": "Network",
+        "root_cause": "Network interface unavailable",
+        "confidence": 21,
+        "matched_keywords": [
+            "simulate network unavailable",
+            "network",
+            "unavailable"
+        ],
+        "suggestion": "Check interface state and NIC link status",
+        "evidence": "evidence/fault/network_fault.log"
+    },
+    {
+        "timestamp": "2026-10-01 01:37:28",
+        "failure_id": "NET_LINK_DOWN_001",
+        "component": "Network",
+        "root_cause": "Network interface unavailable",
+        "confidence": 21,
+        "matched_keywords": [
+            "simulate network unavailable",
+            "network",
+            "unavailable"
+        ],
+        "suggestion": "Check interface state and NIC link status",
+        "evidence": "evidence/fault/network_fault.log"
+    },
+    {
+        "timestamp": "2026-10-01 01:41:41",
+        "failure_id": "NET_LINK_DOWN_001",
+        "component": "Network",
+        "root_cause": "Network interface unavailable",
+        "confidence": 21,
+        "matched_keywords": [
+            "simulate network unavailable",
+            "network",
+            "unavailable"
+        ],
+        "suggestion": "Check interface state and NIC link status",
+        "evidence": "evidence/fault/network_fault.log"
+    },
+    {
+        "timestamp": "2026-10-01 02:01:18",
+        "failure_id": "NET_LINK_DOWN_001",
+        "component": "Network",
+        "root_cause": "Network interface unavailable",
+        "confidence": 21,
+        "matched_keywords": [
+            "simulate network unavailable",
+            "network",
+            "unavailable"
+        ],
+        "suggestion": "Check interface state and NIC link status",
+        "evidence": "evidence/fault/network_fault.log"
     }
 ]

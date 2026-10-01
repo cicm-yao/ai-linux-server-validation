@@ -1,0 +1,11 @@
+failure_mapping:
+
+  NET_LINK_DOWN_001:
+    regression_cases:
+      - TC_NETWORK_001
+
+
+  FI_CPU_001:
+    regression_cases:
+      - TC_CPU_001
+      - TC_CPU_STRESS_001wq

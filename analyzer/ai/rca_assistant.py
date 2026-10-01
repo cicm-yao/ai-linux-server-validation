@@ -1,4 +1,25 @@
 import json
+import requests
+
+def call_ollama(prompt):
+
+    url = "http://192.168.105.1:11434/api/generate"
+
+    payload = {
+        "model": "qwen3:4b",
+        "prompt": prompt,
+        "stream": False,
+        "think": False
+        
+    }
+
+    response = requests.post(
+        url,
+        json=payload,
+        timeout=600
+        )
+
+    return response.json()["response"]
 
 
 def generate_rca_summary(evidence):
@@ -62,6 +83,25 @@ if __name__ == "__main__":
 
 
     result = generate_rca_summary(evidence)
+
+    ai_prompt = f"""
+    You are a Linux server troubleshooting assistant.
+
+    Analyze this failure evidence:
+
+    {json.dumps(evidence, indent=2)}
+
+    Provide:
+
+    1. Failure summary
+    2. Possible root causes
+    3. Recommended checks
+    """
+
+    ai_result = call_ollama(ai_prompt)
+
+
+    result["ai_analysis"] = ai_result
 
     with open(
         "reports/ai_rca_report.json",
